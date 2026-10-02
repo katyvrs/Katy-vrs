@@ -1,0 +1,252 @@
+/* =========================
+   KATY VRS — EDITORIAL STYLE
+   ========================= */
+
+:root {
+  --bg: #180811;
+  --wine: #250d19;
+  --wine-light: #43182a;
+  --text: #f5edf0;
+  --muted: #bcaab1;
+  --line: rgba(245, 237, 240, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(116, 37, 68, 0.16),
+      transparent 35%
+    ),
+    var(--bg) !important;
+
+  color: var(--text) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* HEADER */
+
+header {
+  background: rgba(24, 8, 17, 0.92);
+  border-bottom: 1px solid var(--line) !important;
+  position: relative;
+  z-index: 5;
+}
+
+.logo {
+  font-weight: 500;
+}
+
+.role {
+  color: var(--muted);
+}
+
+/* MAIN */
+
+.layout {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-top: 65px !important;
+}
+
+/* PROFILE */
+
+.profile {
+  border-right: 1px solid var(--line);
+  padding-right: 45px;
+}
+
+.profile-photo {
+  background: var(--wine) !important;
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.profile-photo::after {
+  content: "KATY VRS";
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 9px;
+  letter-spacing: .2em;
+  opacity: .65;
+}
+
+.profile-photo img {
+  filter: saturate(.88) contrast(1.03);
+}
+
+h1 {
+  font-weight: 400 !important;
+  letter-spacing: -.07em !important;
+}
+
+.profile .role {
+  color: #d6b8c4;
+}
+
+/* BIO */
+
+.bio {
+  color: #cdbbc2 !important;
+}
+
+/* CONTACTS */
+
+.contacts a {
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+.contacts a:hover {
+  opacity: .55;
+  transform: translateY(-2px);
+}
+
+/* PROJECT AREA */
+
+.section-title {
+  color: #9f838e !important;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+/* FOLDERS */
+
+.folder {
+  transition:
+    transform .35s ease,
+    opacity .35s ease;
+}
+
+.folder:hover {
+  transform: translateY(-5px);
+}
+
+/* FOLDER TAB */
+
+.folder-tab {
+  background: #74374f !important;
+  border: 1px solid rgba(245,237,240,.12);
+  border-bottom: none;
+  height: 17px !important;
+}
+
+/* FOLDER PREVIEW */
+
+.folder-preview {
+  background: #2b101d !important;
+  border: 1px solid var(--line) !important;
+  position: relative;
+}
+
+.folder-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      120deg,
+      transparent 35%,
+      rgba(255,255,255,.05),
+      transparent 65%
+    );
+  transform: translateX(-100%);
+  transition: transform .8s ease;
+  pointer-events: none;
+}
+
+.folder:hover .folder-preview::after {
+  transform: translateX(100%);
+}
+
+.folder-preview img {
+  filter: saturate(.9);
+}
+
+/* TITLES */
+
+.folder h2 {
+  font-weight: 400 !important;
+  letter-spacing: -.045em !important;
+}
+
+.folder-number {
+  color: #9e7b88 !important;
+}
+
+.folder p {
+  color: #92727f !important;
+}
+
+/* EMPTY PROJECTS */
+
+.empty {
+  color: #987582 !important;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,255,255,.025) 9px,
+      rgba(255,255,255,.025) 10px
+    );
+}
+
+/* ARROW */
+
+.folder-arrow {
+  color: #d9c4cb;
+  transition:
+    transform .3s ease,
+    opacity .3s ease;
+}
+
+.folder:hover .folder-arrow {
+  opacity: .65;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  header {
+    padding: 18px !important;
+  }
+
+  .layout {
+    padding: 30px 18px !important;
+  }
+
+  .profile {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 40px;
+  }
+
+  .profile-photo {
+    max-width: 100% !important;
+  }
+
+  .projects {
+    gap: 42px 0 !important;
+  }
+
+  .folder-tab {
+    width: 75px;
+  }
+
+  .folder h2 {
+    font-size: 20px !important;
+  }
+}
